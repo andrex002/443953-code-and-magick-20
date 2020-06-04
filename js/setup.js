@@ -16,10 +16,8 @@ var coatColors = [
 var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var getRandomData = function (arr) {
-  var randomData;
-  var randomIndex;
-  randomIndex = Math.round(Math.random() * arr.length);
-  randomData = arr[randomIndex];
+  var randomIndex = Math.round(Math.random() * arr.length);
+  var randomData = arr[randomIndex];
   return randomData;
 };
 
