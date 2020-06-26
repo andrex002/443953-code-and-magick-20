@@ -53,7 +53,6 @@
     similarListElement.appendChild(fragment);
   };
 
-  window.util.setup.classList.remove('hidden');
   renderBlockWizards(creatingArrayWizards(4));
   window.util.setup.querySelector('.setup-similar').classList.remove('hidden');
 
