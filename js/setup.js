@@ -58,13 +58,20 @@
     similarListElement.insertAdjacentElement('afterbegin', element);
   };
 
+  var onSaveSuccess = function () {
+    closePopup();
+  };
+
+  var onLoadSuccess = function (response) {
+    renderBlockWizards(response);
+  };
 
   form.addEventListener('submit', function (evt) {
-    save(new FormData(form), closePopup, onError);
+    save(new FormData(form), onSaveSuccess, onError);
     evt.preventDefault();
   });
 
-  load(renderBlockWizards, onError);
+  load(onLoadSuccess, onError);
 
   window.util.setup.querySelector('.setup-similar').classList.remove('hidden');
 
