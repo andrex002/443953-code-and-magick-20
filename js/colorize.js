@@ -11,16 +11,18 @@
     return colors[currentColorIndex];
   };
 
-  window.colorize = function (element, input, colors) {
-    element.addEventListener('click', function () {
-      var color = getColor(colors, input.value);
-      if (element.tagName.toLowerCase() === 'div') {
-        element.setAttribute('style', 'background:' + color);
-        input.setAttribute('value', color);
-      } else {
-        element.style.fill = color;
-        input.value = color;
-      }
-    });
+  var setColor = function (element, input, color) {
+    if (element.tagName.toLowerCase() === 'div') {
+      element.setAttribute('style', 'background:' + color);
+      input.setAttribute('value', color);
+    } else {
+      element.style.fill = color;
+      input.value = color;
+    }
+  };
+
+  window.colorize = {
+    getColor: getColor,
+    setColor: setColor
   };
 })();
